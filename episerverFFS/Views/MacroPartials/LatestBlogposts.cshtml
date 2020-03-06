@@ -4,14 +4,11 @@
 @{
     var startNodeId = Model.MacroParameters["startNodeId"] != null ? Model.MacroParameters["startNodeId"] : Model.Content.Id;
 
-
     var numberOfPosts = 3;
     if (Model.MacroParameters["numberOfPosts"] != null)
     {
         int.TryParse((string)Model.MacroParameters["numberOfPosts"], out numberOfPosts);
     }
-
-
 }
 @if (startNodeId != null)
 {
