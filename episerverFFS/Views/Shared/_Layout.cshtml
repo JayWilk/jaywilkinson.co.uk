@@ -27,7 +27,7 @@
     <header class="kotha-menu marketing-menu">
         @Html.Partial("~/Views/Shared/_Navigation.cshtml")
     </header>
-    @Html.Partial("~/Views/Shared/_Hero.cshtml")
+    @*Html.Partial("~/Views/Shared/_Hero.cshtml")*@
     <div class="kotha-default-content">
         <div class="container">
             <div class="row">
@@ -35,16 +35,16 @@
                     
                     @RenderBody()
 
-                    @Html.Partial("~/Views/Shared/_Articles.cshtml")
+                    @*@Html.Partial("~/Views/Shared/_Articles.cshtml")*@
 
-                    @Html.Partial("~/Views/Shared/_PostNavigation.cshtml")
+                    @*@Html.Partial("~/Views/Shared/_PostNavigation.cshtml")*@
                 </div>
-                @Html.Partial("~/Views/Shared/_SidePanel.cshtml")
+                @*@Html.Partial("~/Views/Shared/_SidePanel.cshtml")*@
             </div>
         </div>
     </div>
     <!-- Renders the red banner above the footer-->
-    @Html.Partial("~/Views/Shared/_FullWidthBannerCTA.cshtml")
+    @*Html.Partial("~/Views/Shared/_FullWidthBannerCTA.cshtml")*@
 
     @Html.Partial("~/Views/Shared/_Footer.cshtml")
 
