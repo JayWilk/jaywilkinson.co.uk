@@ -1,14 +1,18 @@
-﻿<footer>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web;
+@{
+    var root = Model.Root();
+}
+
+<footer>
     <div class="container">
         <div class="footer-widget-row">
             <div class="footer-widget contact-widget">
                 <div class="widget-title">
-                    <img src="assets/images/ft-logo.png" alt="">
+                    <img src="@Url.Content("~/assets/newimages/logowhite.png")" alt="">
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eaccusam et justo duo
-                    dolores eteem.
+                    Experienced Episerver Developer
                 </p>
                 <div class="address">
                     <h4 class="text-uppercase">contact Info</h4>
@@ -60,7 +64,7 @@
     </div>
     <div class="container-fluid text-center ft-copyright">
         <p>
-            &copy; 2017 <a href="">Kotha PRO </a> - Designed with <i class="fa fa-heart"></i> by <a href="http://shapedtheme.com">ShapedTheme</a>
+            <a href="https://episerver.com">I<i class="fa fa-heart"></i>Episerver</a> - &copy; @DateTime.Today.Year - <a href="">James "Jay" Wilkinson </a>
         </p>
     </div>
 </footer>

@@ -27,6 +27,12 @@ footer {
 			.widget-title {
 				@include headline(18px, $footer-text-color);
 				margin-bottom: 30px;
+				img{
+					height: 65px;
+					@media(max-width: 768px) {
+						height: 40px;
+					}
+				}
 			}
 		}
 		.contact-widget {
