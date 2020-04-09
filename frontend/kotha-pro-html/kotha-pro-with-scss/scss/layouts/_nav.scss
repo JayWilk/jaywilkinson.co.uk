@@ -11,7 +11,13 @@
 		padding-left: 0;
 	}
 	.navbar-brand {
-		padding: 21px 15px;
+		padding: 15px 15px;
+		img {
+			height: 35px;
+			@media(max-width: 768px) {
+				height: 25px;
+			}
+		}
 	}
 	.navbar {
 		border-radius: 0;
