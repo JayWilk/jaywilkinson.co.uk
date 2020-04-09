@@ -1,18 +1,20 @@
 module.exports = function(grunt) {
+  grunt.initConfig({
+	  
+    sass: {
+	  dist: {
+		options: {                       
+          style: 'expanded'
+        },
+		
+	    files: {
+		  'style.css': 'style.scss'
+	    }
+	  }
+    }
+	
+  });
 
-	grunt.initConfig({
-	  concat: {
-
-		sass: {
-		  src: ['scss/**/*.scss'],
-		  dest: 'scss/output.scss',
-		},
-	  },
-	});
-
-
-  grunt.loadNpmTasks('grunt-contrib-concat');
-
-  grunt.registerTask('default', ['concat']);
-
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.registerTask('default', ['sass']);
 };
