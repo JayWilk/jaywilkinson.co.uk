@@ -17,14 +17,14 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ee4c51892e876443")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "6b2f9ccb26513a39")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedModels
 {
 	// Mixin Content Type with alias "contentBase"
 	/// <summary>Content Base</summary>
-	public partial interface IContentBase : IPublishedContent
+	public partial interface IContentBase : IPublishedElement
 	{
 		/// <summary>Content</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
@@ -37,7 +37,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Content Base</summary>
 	[PublishedModel("contentBase")]
-	public partial class ContentBase : PublishedContentModel, IContentBase
+	public partial class ContentBase : PublishedElementModel, IContentBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -54,7 +54,7 @@ namespace Umbraco.Web.PublishedModels
 #pragma warning restore 0109
 
 		// ctor
-		public ContentBase(IPublishedContent content)
+		public ContentBase(IPublishedElement content)
 			: base(content)
 		{ }
 
@@ -330,26 +330,134 @@ namespace Umbraco.Web.PublishedModels
 		public string FeatureName => this.Value<string>("featureName");
 	}
 
-	/// <summary>Content Page</summary>
-	[PublishedModel("contentPage")]
-	public partial class ContentPage : PublishedContentModel, IContentBase, INavigationBase
+	/// <summary>Blogpost</summary>
+	[PublishedModel("blogpost")]
+	public partial class Blogpost : PublishedContentModel, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public new const string ModelTypeAlias = "contentPage";
+		public new const string ModelTypeAlias = "blogpost";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentPage, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blogpost, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public ContentPage(IPublishedContent content)
+		public Blogpost(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("keywords")]
+		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
+
+		///<summary>
+		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription => global::Umbraco.Web.PublishedModels.NavigationBase.GetSeoMetaDescription(this);
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
+	}
+
+	/// <summary>Blog</summary>
+	[PublishedModel("blog")]
+	public partial class Blog : PublishedContentModel, INavigationBase
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public new const string ModelTypeAlias = "blog";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blog, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Blog(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Disqus Shortname: To use comments, you'll need to sign up for Disqus and enter your shortname here (more info: https://help.disqus.com/customer/portal/articles/472097-universal-embed-code)
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("disqusShortname")]
+		public string DisqusShortname => this.Value<string>("disqusShortname");
+
+		///<summary>
+		/// How many posts should be shown?
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("howManyPostsShouldBeShown")]
+		public decimal HowManyPostsShouldBeShown => this.Value<decimal>("howManyPostsShouldBeShown");
+
+		///<summary>
+		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("keywords")]
+		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
+
+		///<summary>
+		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription => global::Umbraco.Web.PublishedModels.NavigationBase.GetSeoMetaDescription(this);
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
+	}
+
+	/// <summary>Top level landing page</summary>
+	[PublishedModel("topLevelLandingPage")]
+	public partial class TopLevelLandingPage : PublishedContentModel, IContentBase, INavigationBase
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public new const string ModelTypeAlias = "topLevelLandingPage";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<TopLevelLandingPage, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public TopLevelLandingPage(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -391,119 +499,30 @@ namespace Umbraco.Web.PublishedModels
 		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
 	}
 
-	/// <summary>Blogpost</summary>
-	[PublishedModel("blogpost")]
-	public partial class Blogpost : PublishedContentModel, INavigationBase
+	/// <summary>Content Page</summary>
+	[PublishedModel("contentPage")]
+	public partial class ContentPage : PublishedContentModel, IContentBase, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public new const string ModelTypeAlias = "blogpost";
+		public new const string ModelTypeAlias = "contentPage";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
 		public new static IPublishedContentType GetModelContentType()
 			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blogpost, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContentPage, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 #pragma warning restore 0109
 
 		// ctor
-		public Blogpost(IPublishedContent content)
+		public ContentPage(IPublishedContent content)
 			: base(content)
 		{ }
 
 		// properties
-
-		///<summary>
-		/// Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("bodyText")]
-		public global::Newtonsoft.Json.Linq.JToken BodyText => this.Value<global::Newtonsoft.Json.Linq.JToken>("bodyText");
-
-		///<summary>
-		/// Categories (tags)
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("categories")]
-		public global::System.Collections.Generic.IEnumerable<string> Categories => this.Value<global::System.Collections.Generic.IEnumerable<string>>("categories");
-
-		///<summary>
-		/// Excerpt: Introduction to your blog post. This is also used in the summaries on the front of the blog as well as the homepage
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("excerpt")]
-		public string Excerpt => this.Value<string>("excerpt");
-
-		///<summary>
-		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("pageTitle")]
-		public string PageTitle => this.Value<string>("pageTitle");
-
-		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("keywords")]
-		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
-
-		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("seoMetaDescription")]
-		public string SeoMetaDescription => global::Umbraco.Web.PublishedModels.NavigationBase.GetSeoMetaDescription(this);
-
-		///<summary>
-		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("umbracoNavihide")]
-		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
-	}
-
-	/// <summary>Blog</summary>
-	[PublishedModel("blog")]
-	public partial class Blog : PublishedContentModel, IContentBase, INavigationBase
-	{
-		// helpers
-#pragma warning disable 0109 // new is redundant
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public new const string ModelTypeAlias = "blog";
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public new static IPublishedContentType GetModelContentType()
-			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Blog, TValue>> selector)
-			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-#pragma warning restore 0109
-
-		// ctor
-		public Blog(IPublishedContent content)
-			: base(content)
-		{ }
-
-		// properties
-
-		///<summary>
-		/// Disqus Shortname: To use comments, you'll need to sign up for Disqus and enter your shortname here (more info: https://help.disqus.com/customer/portal/articles/472097-universal-embed-code)
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("disqusShortname")]
-		public string DisqusShortname => this.Value<string>("disqusShortname");
-
-		///<summary>
-		/// How many posts should be shown?
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.5.4")]
-		[ImplementPropertyType("howManyPostsShouldBeShown")]
-		public decimal HowManyPostsShouldBeShown => this.Value<decimal>("howManyPostsShouldBeShown");
 
 		///<summary>
 		/// Content
