@@ -380,3 +380,5 @@ MigrationBackup/
 # Ignore the Models Builder models out of date flag
 **/App_Data/Models/ood.flag
 
+/frontend/kotha-pro-html/kotha-pro-with-scss/package-lock.json
+/frontend/kotha-pro-html/kotha-pro-with-scss/scss/output.scss

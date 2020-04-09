@@ -1,0 +1,8 @@
+{
+  "name": "jaywilkinson",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1"
+  }
+}
