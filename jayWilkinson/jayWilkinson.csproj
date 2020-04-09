@@ -566,6 +566,7 @@
     <Content Include="assets\js\masonry.pkgd.min.js" />
     <Content Include="assets\js\respond.js" />
     <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\newimages\logo.png" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -684,7 +685,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_FullWidthBannerCTA.cshtml" />
     <None Include="Views\_ViewStart.cshtml" />
-    <None Include="Views\Shared\_LayoutOld.cshtml" />
     <None Include="Views\Partials\CategoryLinks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
