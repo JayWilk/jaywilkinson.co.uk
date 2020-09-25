@@ -21,8 +21,12 @@
 					margin-bottom: 22px;
 					@include headline(18px)
 				}
+
+				p {
+					text-align: left;
+				}
+
 				.about-me-img {
-					padding-top: 8%;
 					img {
 						display: inline-block;
 						@include add-border(7px, #fff, all);
