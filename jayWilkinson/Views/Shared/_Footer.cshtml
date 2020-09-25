@@ -2,9 +2,11 @@
 @using Umbraco.Web;
 @{
     var root = Model.Root();
+    var home = (Home)Model.Root();
 }
 
 <footer>
+    @*
     <div class="container">
         <div class="footer-widget-row">
             <div class="footer-widget contact-widget">
@@ -62,6 +64,7 @@
             </div>
         </div>
     </div>
+        *@
     <div class="container-fluid text-center ft-copyright">
         <p>
             <a href="https://episerver.com">I<i class="fa fa-heart"></i>Episerver</a> - &copy; @DateTime.Today.Year - <a href="">James "Jay" Wilkinson </a>
