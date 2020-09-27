@@ -1,0 +1,68 @@
+@using Articulate
+@using Articulate.Models
+
+@model Articulate.Models.IMasterModel
+@using Umbraco.Web;
+@{
+    var root = Model.Root();
+    var topLevelNavigationItems = root.Children.Where(x => x.IsVisible());
+}
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="menu-content">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#myNavbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1>
+                    <a class="navbar-brand" href="@root.Url">
+                        <img src="@Url.Content("~/assets/newimages/logo.png")" alt="logo">
+                    </a>
+                </h1>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="top-social-icons list-inline pull-right">
+                    <li><a href="https://www.linkedin.com/in/james-wilkinson-9bb7b78a/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://twitter.com/jameswilkinson_" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    @Html.ThemedPartial(Model, "SearchBox")
+                </ul>
+                <ul class="nav navbar-nav text-uppercase pull-right">
+                    <li><a href="@Url.ArticulateCategoriesUrl(Model)">Categories</a></li>
+                    <li><a href="@Url.ArticulateTagsUrl(Model)">Tags</a></li>
+                    
+
+                    @foreach (var item in topLevelNavigationItems)
+                    {
+
+                        <li class="@(item.Children.Any(x => x.IsVisible()) ? "dropdown" : string.Empty)">
+                            <a href="@item.Url" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true" aria-expanded="false">@item.Name</a>
+                            <ul class="dropdown-menu">
+                                @foreach (var child in item.Children.Where(x => x.IsVisible()))
+                                {
+                                    <li class="@(item.IsAncestorOrSelf(Model) ? "active" : null)"><a href="@child.Url">@child.Name</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="show-search">
+                <form role="search" method="get" id="searchform" action="@Url.ArticulateSearchUrl(Model)">
+                    <div>
+                        <input type="text" placeholder="Search and hit enter..." name="term" id="term">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
