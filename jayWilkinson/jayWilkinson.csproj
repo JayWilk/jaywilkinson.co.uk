@@ -654,8 +654,6 @@
     <Content Include="Media\articulate\original\logo.png" />
     <Content Include="Media\articulate\original\post1.jpg" />
     <Content Include="Media\articulate\original\post2.jpg" />
-    <Content Include="Views\Shared\_PostNavigation.cshtml" />
-    <Content Include="Views\Shared\_Articles.cshtml" />
     <Content Include="App_Plugins\Articulate\Views\Web.config" />
     <Content Include="App_Plugins\Articulate\Views\MarkdownEditor.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\VAPOR\Views\Web.config" />
@@ -813,16 +811,8 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\home.cshtml" />
-    <Content Include="Views\contentPage.cshtml" />
-    <Content Include="Views\Partials\SectionHeader.cshtml" />
-    <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />
-    <Content Include="Views\Partials\Navigation\TopNavigation.cshtml" />
-    <Content Include="Views\MacroPartials\LatestBlogposts.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_FullWidthBannerCTA.cshtml" />
-    <Content Include="Views\TopLevelLandingPage.cshtml" />
-    <None Include="Views\Partials\CategoryLinks.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
