@@ -1,10 +1,7 @@
-﻿@using Umbraco.Core.PropertyEditors
-@inherits UmbracoViewPage
-@{
-    Layout = null;
-    // Get basic design settings from the homepage
-    var home = (Home)Model.Root();
-}
+﻿@using Articulate;
+@using Articulate.Models
+@using ClientDependency.Core.Mvc
+@inherits Umbraco.Web.Mvc.UmbracoViewPage<ListModel>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Page Title -->
-    <title>@Model.Name - @home.Sitename</title>
+    <title>@Model.PageTitle</title>
+
+    @Html.MetaTags(Model)
+    @Html.SocialMetaTags(Model)
+    @Html.AdvertiseWeblogApi(Model)
+    @Html.RssFeed(Model)
+    @Html.RenderOpenSearch(Model)
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i%7cOswald:300,400,500,600,700%7cPlayfair+Display:400,400i,700,700i" rel="stylesheet">
     <!-- Styles -->
@@ -32,9 +36,12 @@
 </head>
 <body class="marketing">
     <header class="kotha-menu marketing-menu">
-        @Html.Partial("~/Views/Shared/_Navigation.cshtml")
+        @Html.ThemedPartial(Model, "HeaderDescription")
+        @Html.ThemedPartial(Model, "Menu")
     </header>
-    @*Html.Partial("~/Views/Shared/_Hero.cshtml")*@
+    @*@Html.Partial("~/Views/Shared/_Hero.cshtml")*@
+    @*@Html.Partial("~/Views/Shared/_MultiHero.cshtml")*@
+
     <div class="kotha-default-content">
         <div class="container">
             <div class="row">
@@ -51,7 +58,13 @@
     <!-- Renders the red banner above the footer-->
     @*Html.Partial("~/Views/Shared/_FullWidthBannerCTA.cshtml")*@
 
-    @Html.Partial("~/Views/Shared/_Footer.cshtml")
+    <footer>
+        <div class="container-fluid text-center ft-copyright">
+            <p>
+                <a href="https://episerver.com">I<i class="fa fa-heart"></i>Episerver</a> - &copy; @DateTime.Today.Year - <a href="">James "Jay" Wilkinson </a>
+            </p>
+        </div>
+    </footer>
 
     <div class="scroll-up">
         <a href="#"><i class="fa fa-angle-up"></i></a>
@@ -61,5 +74,9 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    @Html.RenderJsHere()
+
+    @Html.GoogleAnalyticsTracking(Model)
 </body>
 </html>
