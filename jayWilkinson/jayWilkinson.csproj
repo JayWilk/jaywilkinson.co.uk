@@ -345,10 +345,6 @@
     <Content Include="App_Plugins\Articulate\Themes\Phantom\Assets\css\normalize.css" />
     <Content Include="App_Plugins\Articulate\Themes\Phantom\Assets\css\site.css" />
     <Content Include="App_Plugins\Articulate\Themes\Phantom\Assets\fonts\phantom.svg" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Assets\css\normalize.css" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Assets\css\screen.css" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Assets\fonts\icons.svg" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Assets\js\feeds.js" />
     <Content Include="App_Plugins\Articulate\Themes\VAPOR\Assets\css\normalize.css" />
     <Content Include="App_Plugins\Articulate\Themes\VAPOR\Assets\css\screen.css" />
     <Content Include="App_Plugins\Articulate\Themes\VAPOR\Assets\fonts\icons.svg" />
@@ -726,9 +722,6 @@
     <Content Include="App_Plugins\Articulate\Themes\Material\Views\List.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\Material\Views\Author.cshtml" />
     <Content Include="App_Plugins\Articulate\package.manifest" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Assets\fonts\icons.eot" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Assets\fonts\icons.ttf" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Assets\fonts\icons.woff" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Author.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\List.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\MasterOriginal.cshtml" />
@@ -745,7 +738,9 @@
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Tags.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Web.config" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Master.cshtml" />
+    <Content Include="App_Plugins\Articulate\Themes\kotha\Views\ContentPage.cshtml" />
     <None Include="Views\Shared\_Hero.cshtml" />
+    <Content Include="Views\Shared\_MultiHero.cshtml" />
     <None Include="Views\Shared\_Navigation.cshtml" />
     <None Include="Views\Shared\_SidePanel.cshtml" />
     <None Include="Views\Shared\_Footer.cshtml" />
@@ -822,7 +817,6 @@
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\home.cshtml" />
-    <Content Include="Views\master.cshtml" />
     <Content Include="Views\contentPage.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
     <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />
@@ -831,7 +825,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_FullWidthBannerCTA.cshtml" />
     <Content Include="Views\TopLevelLandingPage.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
     <None Include="Views\Partials\CategoryLinks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

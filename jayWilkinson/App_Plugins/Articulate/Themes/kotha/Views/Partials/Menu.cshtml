@@ -34,10 +34,9 @@
                     @Html.ThemedPartial(Model, "SearchBox")
                 </ul>
                 <ul class="nav navbar-nav text-uppercase pull-right">
-                    <li><a href="@Url.ArticulateCategoriesUrl(Model)">Categories</a></li>
-                    <li><a href="@Url.ArticulateTagsUrl(Model)">Tags</a></li>
+                    @*<li><a href="@Url.ArticulateCategoriesUrl(Model)">Categories</a></li>
+                    <li><a href="@Url.ArticulateTagsUrl(Model)">Tags</a></li>*@
                     
-
                     @foreach (var item in topLevelNavigationItems)
                     {
 
