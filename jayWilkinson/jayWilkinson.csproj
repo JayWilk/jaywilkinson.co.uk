@@ -826,6 +826,7 @@
     <Content Include="Views\Shared\_FullWidthBannerCTA.cshtml" />
     <Content Include="Views\TopLevelLandingPage.cshtml" />
     <None Include="Views\Partials\CategoryLinks.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
