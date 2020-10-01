@@ -352,6 +352,9 @@
     <Content Include="Views\contentPage.cshtml" />
     <Content Include="Views\home.cshtml" />
     <Content Include="Views\master.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\Partials\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
