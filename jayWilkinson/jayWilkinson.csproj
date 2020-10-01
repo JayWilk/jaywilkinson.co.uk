@@ -720,7 +720,6 @@
     <Content Include="App_Plugins\Articulate\Themes\Material\Views\List.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\Material\Views\Author.cshtml" />
     <Content Include="App_Plugins\Articulate\package.manifest" />
-    <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Author.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\List.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Partials\CommentsDisqus.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Partials\CommentsFacebook.cshtml" />
@@ -734,6 +733,7 @@
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Post.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Tags.cshtml" />
     <Content Include="App_Plugins\Articulate\Themes\kotha\Views\Web.config" />
+    <Content Include="Views\contentPage.cshtml" />
     <None Include="Views\Shared\_Hero.cshtml" />
     <Content Include="Views\Shared\_MultiHero.cshtml" />
     <None Include="Views\Shared\_Navigation.cshtml" />
